@@ -287,6 +287,22 @@ namespace C_Sharp_Playground
 
     static class ToolkitMath
     {
+        /// <summary> Calculates root </summary>
+        /// <param name="a"> A </param>
+        /// <param name="b"> B </param>
+        /// <param name="c"> C </param>
+        /// <returns> Root </returns>
+        public static double[] Root(double a, double b, double c)
+        {
+            double d = Pow(b, 2) - 4 * a * c;
+            if (d < 0) return null;
+            else
+            {
+                if (d == 0) return new double[1] { -b / 2 * a };
+                else return new double[2] {(-b + Sqrt(d)) / 2 * a, (-b - Sqrt(d)) / 2 * a };
+            }
+        }
+
         /// <summary> Gets a number and calculates its length (number of digits) </summary>
         /// <param name="num"> The number to check </param>
         /// <returns> The number's length (number of digits) </returns>
